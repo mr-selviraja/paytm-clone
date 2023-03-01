@@ -7,7 +7,7 @@
 
   --standard-padding: 5vw;
 
-  --navbar-height: calc(4rem + 4.2vw);
+  --navbar-height: calc(4rem + 4vw);
 }
 
 *,
@@ -68,12 +68,28 @@ a {
   color: var(--color-black);
 }
 
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 1.5rem 2.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+}
+
 .heading-primary {
   font-size: calc(2.5rem + 1.5vw);
 }
 
 .heading-secondary {
-  font-size: calc(3.5rem + 1vw);
+  font-size: calc(2rem + 1.2vw);
+}
+
+.heading-tertiary {
+  font-size: calc(0.65rem + 0.8vw);
 }
 
 /* custom styles */
@@ -182,6 +198,7 @@ a {
 
 .btn-signin img {
   margin-left: calc(0.35rem + 0.25vw);
+  width: 25%;
 }
 
 /* main styles */
@@ -232,12 +249,160 @@ a {
   width: 60vmin;
 }
 
+/* payment-types styles */
+.payment-types {
+  padding: calc(3.5rem + 1.5vw) var(--standard-padding);
+  color: var(--color-white);
+}
+
+.payment-types h2 {
+  margin-bottom: 2.5rem;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.payment-types__list {
+  list-style: none;
+  font-size: calc(1rem + 0.25vw);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.payment-types__list--item {
+  max-width: 15rem;
+  padding: 1.5rem;
+  padding-right: 3rem;
+  line-height: 1.4;
+}
+
+.payment-types__list--item:hover {
+  cursor: pointer;
+}
+
+.payment-types__list--item:hover {
+  background-color: #01a0d0;
+  border-radius: 1rem;
+}
+
+.payment-types__list--item a {
+  color: var(--color-white);
+  font-feature-settings: "Inter", sans-serif;
+}
+
+.payment-types__list--item a img {
+  width: 6rem;
+  margin-bottom: 1.5rem;
+}
+
+/* paytm-instruments styles */
+.paytm-instruments {
+  padding: calc(7.5rem + 2.5vw);
+
+  background-color: var(--color-grey);
+}
+
+.custom-jumbotron {
+  margin-top: 2.5rem;
+  padding: calc(3.5rem + 2.5vw) var(--standard-padding);
+  background-color: var(--color-white);
+  border-radius: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.custom-jumbotron__desc div img {
+  width: calc(5rem + 2.5vw);
+}
+
+.custom-jumbotron__img {
+  align-self: center;
+  width: 60%;
+}
+
+/* paytm-banking styles */
+.paytm-banking {
+  margin-top: 2.5rem;
+
+  display: flex;
+  gap: 2.5%;
+}
+
+.paytm-banking__card {
+  background-color: var(--color-white);
+  padding: calc((2.5rem + 1vw));
+  padding-bottom: 0 !important;
+  border-radius: 1rem;
+  width: 48.75%;
+}
+
+.paytm-banking__card--img {
+  width: calc(25rem + 2.5vw);
+  margin: 0 auto;
+  margin-bottom: 2.5rem;
+
+  text-align: center;
+}
+
+/* fin-services styles */
+.fin-services {
+  padding: calc(7.5rem + 2.5vw);
+}
+
+.bg-with-img {
+  background-image: url("./gray-spike.png");
+  z-index: 1000;
+}
+
+footer {
+  margin-top: 10rem;
+  padding: calc(2.5rem + 1vw) var(--standard-padding);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer img {
+  width: 17rem;
+}
+
+footer .downloads {
+  display: flex;
+  gap: 1.5rem;
+}
+
+footer .social {
+  display: flex;
+  gap: 2.5rem;
+}
+
+footer .social i {
+  color: #ddd;
+  font-size: calc(2rem + 1vw);
+}
+
+footer .social i:hover {
+  cursor: pointer;
+  color: var(--color-black);
+}
+
 /* mediaqueries */
 
 @media screen and (max-width: 900px) {
   .appeal {
     display: none;
   }
+
   .nav ul {
     position: absolute;
     top: var(--navbar-height);
@@ -278,7 +443,7 @@ a {
   }
 }
 
-@media screen and (max-width: 797px) {
+@media screen and (max-width: 850px) {
   .hero {
     flex-direction: column-reverse;
     align-items: center;
@@ -297,5 +462,59 @@ a {
 
   .hero button {
     margin: 0 auto;
+  }
+
+  .custom-jumbotron {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .custom-jumbotron__desc div {
+    display: none !important;
+  }
+
+  .paytm-banking {
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .paytm-banking__card {
+    width: 100%;
+  }
+
+  .mod-jumbotron {
+    flex-direction: column !important;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 2.5rem;
+
+    text-align: center;
+    background-color: var(--color-grey);
+  }
+
+  footer img {
+    width: 10rem;
+  }
+
+  footer .downloads {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 290px) {
+  .payment-types h2 {
+    text-align: center;
+  }
+
+  .payment-types__list {
+    justify-content: center;
   }
 }
